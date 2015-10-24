@@ -8,10 +8,13 @@ import requests
 import shutil
 
 # PARSE COMMAND LINE ARGUMENTS
+
 PARSER = argparse.ArgumentParser()
 PARSER.add_argument(  'username')
 ARGS = PARSER.parse_args()
+
 # CALL THE GITHUB API AND GET USER INFO
+
 RequestUrl = 'https://api.github.com/users/' + ARGS.username
 RESULT = requests.get( RequestUrl )
 if RESULT.ok :
@@ -20,7 +23,9 @@ if RESULT.ok :
 else:
     sys.stderr.write( "Error fetching user information for {0}; exiting now, sorry...\n".format(ARGS.username) )
     sys.exit()
+
 # DOWNLOAD AND SAVE IMAGE FILE
+
 I = requests.get(avatarURL , stream=True)
 if I.ok:
     with open(ARGS.username + '.png' , 'wb') as OuTfIle:
