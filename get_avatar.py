@@ -16,7 +16,7 @@ args = parser.parse_args()
 # CALL THE GITHUB API AND GET USER INFO
 
 request_url = 'https://api.github.com/users/' + args.username
-result = requests.get(RequestUrl)
+result = requests.get(request_url)
 if result.ok :
     user_info = json.loads(result.content)
     avatarURL = user_info['avatar_url']
