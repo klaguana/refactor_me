@@ -28,5 +28,5 @@ else:
 
 L = requests.get(avatarURL, stream=True)
 if L.ok:
-    with open(args.username + '.png', 'wb') as OuTfIle:
-        shutil.copyfileobj( L.raw, OuTfIle )
+    with open(args.username + '.png', 'wb') as outfile:
+        shutil.copyfileobj( L.raw, outfile )
