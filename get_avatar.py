@@ -21,7 +21,8 @@ if result.ok :
     user_info = json.loads(result.content)
     avatarURL = user_info['avatar_url']
 else:
-    sys.stderr.write( "Error fetching user information for {0}; exiting now, sorry...\n".format(args.username) )
+    sys.stderr.write( "Error fetching user information for {0};\
+                     exiting now, sorry...\n".format(args.username))
     sys.exit()
 
 # DOWNLOAD AND SAVE IMAGE FILE
